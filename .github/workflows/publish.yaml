@@ -1,17 +1,21 @@
 name: Publish packages to GitHub Packages
 on:
   workflow_dispatch:
-  push:
+  pull_request:
+    types: [closed]
     branches: [main]
     paths: ['packages/*']
 jobs:
-  build:
+  publish:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       # Setup .npmrc file to publish to GitHub Packages
       - uses: actions/setup-node@v3
@@ -23,9 +27,8 @@ jobs:
 
       - name: Configure CI Git User
         run: |
-          git config --global user.name 'r1oga'
-          git config --global user.email 'me@r1oga.io'
-
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor}}@users.noreply.github.com"
 
       - name: Import GPG key
         id: import_gpg
