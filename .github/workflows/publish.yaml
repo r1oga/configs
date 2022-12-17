@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [closed]
     branches: [main]
-    paths: ['packages/*']
+    paths: ['packages/**']
 jobs:
   publish:
     if: github.event.pull_request.merged == true
