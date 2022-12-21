@@ -1,6 +1,6 @@
 {
   "name": "@r1oga/eslint-config-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared eslint configuration for react apps",
   "main": ".eslintrc.yaml",
   "files": [
