@@ -32,6 +32,32 @@
       "options": {
         "parser": "markdown"
       }
+    },
+    {
+      "files": [
+        "*.css",
+        "*.less",
+        ".scss"
+      ],
+      "options": {
+        "parser": "css"
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": [
+        "*.graphql"
+      ],
+      "options": {
+        "parser": "graphql"
+      }
     }
   ]
 }

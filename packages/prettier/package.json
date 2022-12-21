@@ -19,7 +19,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "js-yaml .prettierrc.yaml > .prettierrc.json",
+    "prepare": "js-yaml .prettierrc.yaml > .prettierrc.json",
     "postinstall": "bash postinstall.sh"
   },
   "peerDependencies": {
